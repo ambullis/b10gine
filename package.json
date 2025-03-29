@@ -1,10 +1,9 @@
 
   {
-  "name": "test-project",
+  "name": "b10gine",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "private": true,
   "scripts": {
-    "start": "node index.html",
-    "unit": 
+    "start": "node index.html"
 }
