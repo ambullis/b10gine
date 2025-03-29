@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ambullis</title>
+<style>
+  *
+{
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--blc);
+  
+}
+ :root 
+ {
+   --blc: #101218; 
+   --blu: #4FC7FD;
+   --txt: #FAFAFA8C;
+ }
+ body 
+ { 
+   border: 0.5px solid var(--blu);
+   color: var(--txt);
+ } 
+   
+ section 
+ { 
+   min-height: 110vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+ }
+ section h1
+{
+  margin: 5px;
+}
+ section .img
+ { 
+   width: 150px; 
+   height: auto;
+   border-radius: 15px;
+   letter-spacing: 2px;
+   font-size: 25px;
+   border: 0.5px solid var(--blu);
+   margin-bottom: 15px;
+   animation: 3s rise;
+ }
+ a 
+ {
+   color: tomato;
+   margin-bottom: 10px;
+   font-size: 25px;
+ }
+ section img
+ {
+   width: 150px;
+   border-radius: 50%;
+ }
+ .st 
+ {
+   width: 150px;
+   border-radius: 50%;
+ }
+ .menu
+ { 
+   position: relative;
+   display: none;
+   height: calc(10vh - 0px);
+   top: 0;
+   border: 0.5px solid var(--blu);
+ }
+ .menu.active 
+ {
+   position: fixed; 
+   display: block;
+   height: calc(10vh - 15px); 
+   width: 100%;
+   backdrop-filter: blur(10px);
+   background: transparent;
+   z-index: 10000;
+   
+ }
+ 
+ section a 
+ {
+   color: tomato;
+   margin-bottom: 10px;
+   font-size: 25px;
+ }
+ section p
+ {
+   margin: 15px;
+   font-size: 14px;
+   color: #f1f1f1;
+   text-transform: uppercase;
+   animation: 5s linear 0s anime;
+ }
+ ul  
+ {
+   position: fixed;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   backdrop-filter: blur(10px);
+   background: transparent;
+ }
+ li 
+ { 
+   display: inline;
+   display: flex;
+   backdrop-filter: blur(10px);
+   color: #FFFFFF;
+   background: transparent;
+   padding: 5px;
+   font-size: 18px;
+   list-style: none;
+   align-items: center;
+ }
+ .site p 
+ { 
+   animation: 5s linear 0s anime;
+   transition-delay: 5s;
+ }
+
+ @keyframes anime
+ { 
+     0% 
+     {
+       transform: translateX(-50vh);
+       opacity: 0;
+
+     }
+     100% 
+     {
+       transform: translateX(0vh);
+       filter: hue-rotate(90deg);
+       opacity: 0.9;
+     }
+ }
+ @keyframes rise 
+   { 
+     0% 
+     {
+       transform: translateX(-50vh);
+       filter: hue-rotate(0deg);
+
+     }
+     100% 
+     {
+       transform: translateX(0vh);
+       filter: hue-rotate(270deg);
+     }
+   }
+
+
+ 
+ .group 
+ {
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   margin-bottom: 30px;
+
+ }
+ .group .text 
+ { 
+    transition: 1.5s;
+    text-align: center;
+    padding-bottom: 25px;
+ }
+ .icon 
+ {
+   font-size: 25px;
+   margin-bottom: 5px;
+   text-align: center;
+   animation: 3s ease-in-out pulse;
+ }
+.logo 
+{
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width: 175px; 
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+  letter-spacing: 2px;
+  font-size: 25px;
+  border: 0.5px solid var(--blu);
+  font-family: 'Courier New', Courier, monospace;
+}
+ @keyframes pulse {
+  0% {
+    filter: blur(10px);
+  }
+  
+  100% {
+    filter: blur(0px);
+  }
+}
+.contact 
+{ 
+  width: 150px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 15px;
+  margin-top: 55px;
+  position: relative;
+  border: 0.5px solid var(--blu);
+  box-shadow: 1px 1px 1px rgba(15, 165, 247, 0.2);
+}
+.contact:hover {
+  animation-name: rotate;
+  animation-duration: 2s;
+  color: var(--clr);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.group .text.foto 
+{ 
+  width: 100px;
+  border-radius: 50%;
+}
+</style>
+  
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+         <div class="menu"> 
+         <ul>
+           <li>Нравится Muai-Thai</li>
+           <li>Кататься на Велосипеде</li>
+           <li>Из музыки Naâman</li>
+           <li>Из Книг Сименон</li>
+         </ul>
+         </div>
+
+       <section>
+
+         <span class="logo" onclick="Element.action('logo')">Увлечения</span>
+         <a onclick="Element.action('up')">Открыть Фото</a>
+         <img src="img.jpg" class="img"/>
+         <div class="icon">Привет, меня зовут Анатолий</div>
+         <p>В данное время обучаюсь веб технологиям</p>
+         <p>Создаю небольшие проэкты сайтов</p>
+         <p>Нравится дизайн, адаптивная верстка</p>
+         <p>Наполнение контентом и создание макета</p>
+         <p>Добавление функциональных елементов</p>
+         <p>Изучаю пользовательский опыт</p>
+         <div class="icon">Создаю сайты хорошего качества</div>
+          <button onclick="Element.action('down')" class="contact">Вконтакте</button>
+       
+
+       </section>
+       <div></div>
+        <div class="group">
+          <div class="text"> Цель в создании уникального дизайна</div>
+          <div class="text"> Ориентируясь на новые технологии</div>
+          <div class="text"> Инвестируя в свое обучение</div>
+          <div class="text"> Желаю развиваться в ИТ</div>
+          <div class="text"> Нацелен на результат </div>
+         <img src="ft.jpeg" class="st" />
+         <a href="https://t.me/btengine">Телеграм</a>
+         </div>
+  <script>
+    let opt = {
+  fr: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+}
+let clb = (ent, obs) => {
+  ent.forEach((ent) => {
+    ent.target.style.scale = ent.intersectionRatio
+  })
+}
+let obs = new IntersectionObserver(clb, opt)
+for (const target of document.querySelectorAll('.text')) {
+  obs.observe(target)
+}
+
+
+const Element = (function() {
+  const img = document.querySelector('img')
+  const btn = document.querySelector('.contact')
+  
+  
+  let logo = document.querySelector('.logo')
+  let menu = document.querySelector('.menu')
+  const anc = document.querySelector('a')
+  img.style.display = 'none'
+  
+  function ms() {
+    
+    game.reset()
+  }
+  
+  game = {
+    reset: function() {
+      
+    },
+    action: {
+      up: function foo() {
+        img.style.display = 'block'
+        anc.style.display = 'none'
+      },
+      down: function down() {
+        btn.innerText = 'b10gine'
+      },
+      logo: function logo() {
+        menu.classList.toggle('active')
+      },
+      
+      
+      
+    }
+  }
+  return {
+    data: function() {
+      window.onload = ms
+      
+    },
+    action: function(act) {
+      switch (act) {
+        case 'up':
+          game.action.up();
+          break
+        case 'down':
+          game.action.down();
+          break
+        case 'logo':
+          game.action.logo();
+          break
+        case 'to':
+          game.action.to();
+          break
+      }
+    }
+  }
+})()
+Element.data()
+  </script>
+</body>
+</html>
